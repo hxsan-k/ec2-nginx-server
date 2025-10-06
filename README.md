@@ -1,0 +1,1 @@
+EC2 NGINX Server
