@@ -62,10 +62,10 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 ---
 
 ### 4. Secure with Let’s Encrypt (Certbot)
-Install dependencies using `sudo apt install certbot python3-certbot-nginx -y`.  
-Then issue certificates with `sudo certbot --nginx`.  
-When prompted, enter `example.com www.example.com` and select **Redirect HTTP to HTTPS**.  
-Verify with `sudo certbot certificates` and test renewal using `sudo certbot renew --dry-run`.
+- Install dependencies using `sudo apt install certbot python3-certbot-nginx -y`.  
+- Then issue certificates with `sudo certbot --nginx`.  
+- When prompted, enter `example.com www.example.com` and select **Redirect HTTP to HTTPS**.  
+- Verify with `sudo certbot certificates` and test renewal using `sudo certbot renew --dry-run`.
 
 > [!NOTE]  
 > Certificates are valid for **90 days** and renew automatically through a systemd timer.  
