@@ -17,7 +17,6 @@ This project demonstrates an end-to-end setup of a basic web server on AWS:
 - [Setup Steps](#️-setup-steps) ⚙️ 
 - [Security Group Rules](#-security-group-rules) 🔒
 - [Notes on Costs](#-notes-on-costs) 💰
-- [Next Steps](#-next-steps) 🚀 
 
 ---
 
@@ -92,11 +91,3 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 | Route 53 Hosted Zone | ~$0.50/mo | Small DNS charge |
 | DNS queries | ~$0.40/million | Negligible |
 | Let’s Encrypt | Free | Auto-renewal built in |
-
----
-
-## 🚀 Next Steps
-- Add a custom `index.html` page to replace the default NGINX one  
-- Automate setup using Terraform or AWS CloudFormation  
-- Add monitoring with AWS CloudWatch  
-- Experiment with reverse proxying a backend app  
