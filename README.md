@@ -62,14 +62,14 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 ---
 
 ### 4. Secure with Let’s Encrypt (Certbot)
-Install dependencies using `<sudo apt install certbot python3-certbot-nginx -y>`.  
-Then issue certificates with `<sudo certbot --nginx>`.  
+Install dependencies using `sudo apt install certbot python3-certbot-nginx -y`.  
+Then issue certificates with `sudo certbot --nginx`.  
 When prompted, enter `example.com www.example.com` and select **Redirect HTTP to HTTPS**.  
-Verify with `<sudo certbot certificates>` and test renewal using `<sudo certbot renew --dry-run>`.
+Verify with `sudo certbot certificates` and test renewal using `sudo certbot renew --dry-run`.
 
 > [!NOTE]  
 > Certificates are valid for **90 days** and renew automatically through a systemd timer.  
-> Use `<sudo systemctl list-timers | grep certbot>` to confirm.
+> Use `sudo systemctl list-timers | grep certbot` to confirm.
 
 ---
 
@@ -100,8 +100,3 @@ Verify with `<sudo certbot certificates>` and test renewal using `<sudo certbot 
 - Automate setup using Terraform or AWS CloudFormation  
 - Add monitoring with AWS CloudWatch  
 - Experiment with reverse proxying a backend app  
-
----
-
-> [!TIP]  
-> This repo is intentionally simple — it’s the foundation for future projects like automated deployments, CI/CD pipelines, and scalable multi-region architectures.
