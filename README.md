@@ -2,6 +2,10 @@
 
 Deployed a simple **NGINX web server** on an **AWS EC2 instance**, mapped it to a **custom Route 53 domain**, and secured it with a **Let's Encrypt (Certbot)** SSL certificate.
 
+<p align="center">
+  <img src="./Nginx.gif" alt="Nginx Demo" width="650">
+</p>
+
 ---
 
 ## 📍 Project Overview
@@ -10,8 +14,6 @@ This project demonstrates an end-to-end setup of a basic web server on AWS:
 2. Install and run NGINX  
 3. Configure DNS in Route 53  
 4. Enable HTTPS with Certbot
-
-![Nginx Demo](./Nginx.gif)
 
 ---
 
