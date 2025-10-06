@@ -11,6 +11,8 @@ This project demonstrates an end-to-end setup of a basic web server on AWS:
 3. Configure DNS in Route 53  
 4. Enable HTTPS with Certbot
 
+![Nginx Demo](./Nginx.gif)
+
 ---
 
 ## 🧭 Table of Contents
