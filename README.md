@@ -1,5 +1,9 @@
 # 🖥️ EC2 NGINX Server
 
+[![AWS EC2](https://img.shields.io/badge/AWS-EC2-232F3E?logo=amazonaws)](https://aws.amazon.com/ec2/)
+[![Nginx](https://img.shields.io/badge/Nginx-Web%20Server-009639?logo=nginx)](https://nginx.org/)
+[![Route 53](https://img.shields.io/badge/AWS-Route%2053-232F3E?logo=amazonaws)](https://aws.amazon.com/route53/)
+
 Deployed a simple **NGINX web server** on an **AWS EC2 instance**, mapped it to a **custom Route 53 domain**, and secured it with a **Let's Encrypt (Certbot)** SSL certificate.
 
 <p align="center">
