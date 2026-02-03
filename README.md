@@ -52,9 +52,6 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 | `@` | A | `18.208.141.6` | 300 |
 | `www` | CNAME | `nginx-hasan.click` | 300 |
 
-> [!TIP]  
-> This setup avoids duplicate management — if your EC2 IP changes, you only need to update the root A record.
-
 ### 4. Secure with Let’s Encrypt (Certbot)
 - Install dependencies using `sudo apt install certbot python3-certbot-nginx -y`.  
 - Then issue certificates with `sudo certbot --nginx`.  
