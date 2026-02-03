@@ -1,19 +1,19 @@
-# 🖥️ EC2 Nginx Server
+# NGINX Web Server on AWS EC2
 
 [![AWS EC2](https://img.shields.io/badge/AWS-EC2-232F3E?logo=amazonaws)](https://aws.amazon.com/ec2/)
 [![Nginx](https://img.shields.io/badge/Nginx-Web%20Server-009639?logo=nginx)](https://nginx.org/)
 [![Route 53](https://img.shields.io/badge/AWS-Route%2053-232F3E?logo=amazonaws)](https://aws.amazon.com/route53/)
 
-Deployed a simple **NGINX web server** on an **AWS EC2 instance**, mapped it to a **custom Route 53 domain**, and secured it with a **Let's Encrypt (Certbot)** SSL certificate.
+Deployed and operated an NGINX web server on AWS EC2, configured DNS with Route 53, and secured the service using Let’s Encrypt (Certbot) TLS certificates for HTTPS.
 
 <p align="center">
-  <img src="./Nginx.gif" alt="Nginx Demo" width="650">
+  <img src="./Nginx.gif" alt="Nginx Demo" width="800">
 </p>
 
 ---
 
-## 📍 Project Overview
-This project demonstrates an end-to-end setup of a basic web server on AWS:
+## Project Overview
+This project demonstrates an end-to-end setup of an NGINX web server on AWS:
 1. Launch EC2 (Ubuntu)  
 2. Install and run NGINX  
 3. Configure DNS in Route 53  
@@ -21,17 +21,10 @@ This project demonstrates an end-to-end setup of a basic web server on AWS:
 
 ---
 
-## 🧭 Table of Contents
-- [Setup Steps](#️-setup-steps) ⚙️ 
-- [Security Group Rules](#-security-group-rules) 🔒
-- [Notes on Costs](#-notes-on-costs) 💰
-
----
-
-## ⚙️ Setup Steps
+## Setup Steps
 
 ### 1. Launch an EC2 Instance
-- Type: **Ubuntu 22.04 LTS (Free Tier)**
+- Used: **Ubuntu 22.04 LTS (Free Tier)**
 - Ports opened in the **Security Group**:
   - 22 (SSH) — management access via EC2 Instance Connect  
   - 80 (HTTP) — web + Let’s Encrypt validation  
@@ -40,8 +33,6 @@ This project demonstrates an end-to-end setup of a basic web server on AWS:
 > [!IMPORTANT]  
 > For production, never leave port 22 open to the world.  
 > Restrict it to your IP or replace SSH entirely with **AWS SSM Session Manager**.
-
----
 
 ### 2. Install and Verify NGINX
 ```bash
@@ -53,8 +44,6 @@ Visit your instance’s public IP — you should see the NGINX default welcome p
 > [!NOTE]
 > The NGINX service starts automatically after installation, but you can manually start or enable it with `sudo systemctl start nginx` and `sudo systemctl enable nginx` if needed.
 
----
-
 ### 3. Connect a Custom Domain (Route 53)
 Created a **public hosted zone** for `nginx-hasan.click`.
 
@@ -65,8 +54,6 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 
 > [!TIP]  
 > This setup avoids duplicate management — if your EC2 IP changes, you only need to update the root A record.
-
----
 
 ### 4. Secure with Let’s Encrypt (Certbot)
 - Install dependencies using `sudo apt install certbot python3-certbot-nginx -y`.  
@@ -80,7 +67,7 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 
 ---
 
-## 🔒 Security Group Rules
+## Security Group Rules
 | Type | Port | Source | Purpose |
 |------|------|---------|----------|
 | SSH | 22 | 0.0.0.0/0 | Temporary for EC2 Instance Connect |
@@ -92,7 +79,7 @@ Created a **public hosted zone** for `nginx-hasan.click`.
 
 ---
 
-## 💰 Notes on Costs
+## Notes on Costs
 | Service | Est. Cost | Notes |
 |----------|------------|-------|
 | EC2 (t2.micro) | Free Tier | Charged hourly after limit |
